@@ -11,12 +11,59 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  
+    <h1>Psychic Game</h1>
+    <p>Guess the letter that I am thinking of</p>
+    <p>Wins: <span id ='player-wins'>Nothing Yet</span></p>
+    <p>Losses: <span id = 'player-losses'>Nothing Yet</span></p>
+    <p>Guesses Left: <span id ='guess-left'>Nothing Yet</span></p>
+    <p>Guesses so far: <span id = 'guess-made'>Nothing Yet</span></p>
 
 
     <!-- Optional JavaScript -->
     <script>
-      
+    var playerWins = document.getElementById('player-wins'); 
+    var playerLosses = document.getElementById('player-losses');
+    var guessLeft = document.getElementById('guess-left');
+    var guessMade = document.getElementById('guess-made')
+
+    var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','q','r','s','t','u','v','w','x','y','z'];
+
+    var wins = 0;
+    var losses = 0;
+    var left = 10;
+    var compSelect = '';
+    var made = [] 
+
+    compSelect = alphabet[Math.floor(Math.random() * alphabet.length)];
+    document.onkeyup = function(event) {
+      made.push(event.key)
+      guessMade.textContent = made
+      console.log(made);
+
+      console.log(compSelect);
+
+      if (event.key === compSelect) {
+        console.log('You win');
+        wins++;
+        playerWins.textContent = wins;
+        compSelect = ''
+        left = 10
+        guessLeft.textContent = 10
+      }
+      else {
+        left--
+        guessLeft.textContent = left
+        if (left === 0) {
+          console.log('You lose!');
+          losses++
+          playerLosses.textContent = losses;
+          left = 10;
+          guessLeft
+        }
+      }
+    }
+
+
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
