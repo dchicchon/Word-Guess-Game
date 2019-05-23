@@ -24,7 +24,11 @@ The purpose of this homework assignment was to use javascript to create a letter
 
 5. I set the computer selection variable to the indice in an alphabet that is randomly selected using Math.floor and Math.random().
 
-6. 
+6. If I press a key on the keyboard, it will begin the game. The key that we pressed will go through checks to make sure its a valid letter to be compared against the value that the computer chose.
+
+7. We will then reach the if statement that checks if the user selection is equal to the computer selection. If true, the user has then met the win condition and increases the win counter by 1. If false, the user's guess count gets dropped by 1. Within that else statement, if the guess count get dropped to 0, the lose counter increases by 1.
+
+8. We also have a reset function for if the user won or lost. The reset function sets the guesses back to 10, empties the letters guessed array, and a newly selected letter by the computer.
 
 ## My Links
 - [Github](https://github.com/dchicchon)
