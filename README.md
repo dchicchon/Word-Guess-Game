@@ -1,6 +1,6 @@
 # Word-Guess-Game
 ## Site Screenshots
-![Site Screenshot](assets/images/site_screenshot.png)
+![Site Screenshot](assets/images/psychic-site-screenshot.png)
 
 ## Technologies Used
 - [Visual Studio Code](https://code.visualstudio.com/)
