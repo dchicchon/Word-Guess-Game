@@ -11,8 +11,8 @@
     <title>Psychic Game</title>
   </head>
   <body style ='background-image: url(assets/images/psychic.jpeg); text-align: center'>
-    <div class="container" style='background: white; color: black; width: 25%'>
-      <h1>Psychic Game</h1>
+    <div class="container" style='background: black; color: white; width: 25%; position: relative; left:18rem'>
+      
       <p>Guess the letter that I am thinking of</p>
       <p>Wins: <span id ='player-wins'>Nothing Yet</span></p>
       <p>Losses: <span id = 'player-losses'>Nothing Yet</span></p>
@@ -44,6 +44,16 @@
       guessMade.textContent = made;
     }
 
+    function checkAlpha(input) {
+        var letter = /^[a-z]+$/;
+        if(input.match(letter)) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
 
     // The computer selects an random indice within the variable alphabet using the Math.random function
     // We multiply the length of the alphabet with Math.random to pick an indice and Math.floor with round down
@@ -53,36 +63,46 @@
 
     // .onkeyup is assigned a function 'event' so that when a key is pressed, we add that key to the array 'made'.
     // guess.Made is assigned the value of the list made to get the content of made into the html.
+    compSelect = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+    // .onkeyup is assigned a function 'event' so that when a key is pressed, we add that key to the array 'made'.
+    // guess.Made is assigned the value of the list made to get the content of made into the html.
     document.onkeyup = function(event) {
 
-      if (made.includes(event.key)) {
-        console.log('Please pick a different letter')
-      }
-         
-
-      else {
-        made.push(event.key)
-        guessMade.textContent = made
-        console.log(compSelect);
-
-        // Here I create the win-condition that is if the event.key equals the randomly selected letter by compSelect, ///// then the number of wins increases by 1. We then assign wins to the playerWins.textContent to write the number /// of wins onto the HTML. We also reset the guesses left, guesses made, and the indice assigned to compSelect.
-
-        if (event.key === compSelect) {
-          console.log('You win');
-          wins++;
-          playerWins.textContent = wins;
-          reset();
-        }
-        else {
-          left--
-          guessLeft.textContent = left
-          if (left === 0) {
-            console.log('You lose!');
-            losses++
-            playerLosses.textContent = losses;
-            reset()  
+      if(checkAlpha(event.key)) {
+          if (made.includes(event.key)) {
+          console.log('Please pick a different letter')
           }
-        }  
+
+          else {
+              made.push(event.key)
+              guessMade.textContent = made
+              console.log(compSelect);
+
+              // Here I create the win-condition that is if the event.key equals the randomly selected letter by compSelect, ///// then the number of wins increases by 1. We then assign wins to the playerWins.textContent to write the number /// of wins onto the HTML. We also reset the guesses left, guesses made, and the indice assigned to compSelect.
+
+              if (event.key === compSelect) {
+                  console.log('You win');
+                  wins++;
+                  playerWins.textContent = wins;
+                  reset();
+              }
+      
+              else {
+              left--
+              guessLeft.textContent = left
+              if (left === 0) {
+                  console.log('You lose!');
+                  losses++
+                  playerLosses.textContent = losses;
+                  reset()  
+                  }
+              }
+          }
+
+      }
+      else {
+          console.log('That is not a valid key')
       }
     }
 
