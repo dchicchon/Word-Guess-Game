@@ -61,9 +61,9 @@ document.onkeyup = function(event) {
             // Here I create the win-condition that is if the event.key equals the randomly selected letter by compSelect, ///// then the number of wins increases by 1. We then assign wins to the playerWins.textContent to write the number /// of wins onto the HTML. We also reset the guesses left, guesses made, and the indice assigned to compSelect.
 
             if (event.key === compSelect) {
-                console.log('You win');
                 wins++;
                 playerWins.textContent = wins;
+                alert('You won! The Computer guessed ' + compSelect);
                 reset();
             }
     
@@ -74,8 +74,8 @@ document.onkeyup = function(event) {
                 console.log('You lose!');
                 losses++
                 playerLosses.textContent = losses;
-                alert('The Computer guessed ' + compSelect) 
-                reset()
+                alert('You lost! The Computer guessed ' + compSelect) 
+                reset();
                 }
             }
         }
