@@ -5,14 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Psychic Game</title>
+    <link rel="stylesheet" type = 'text/css' href="assets/css/reset.css">
+    <link rel="stylesheet" type = 'text/css' href="assets/css/style.css">
   </head>
 
   <!--In my body I added the background image to add to the aesthetic of the game-->
-  <body style ='background-image: url(assets/images/psychic.jpeg); text-align: center'>
-    <div class="container pr-5" style='background: black; color: white; width: 25%; position: relative; left:20rem; bottom: -12rem;'>
+  <body>
+    <div class="container">
       
     <!--Here I added id's to several of my span tags so that they would be linked with the variable counter in my javascript-->
       <h3>Guess the letter that I'm thinking of!</h3>
+      <br>
       <p>Wins: <span id ='player-wins'>Nothing Yet</span></p>
       <p>Losses: <span id = 'player-losses'>Nothing Yet</span></p>
       <p>Guesses Left: <span id ='guess-left'>Nothing Yet</span></p>

@@ -1,0 +1,34 @@
+
+body {
+    line-height: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("../images/psychic.jpeg");
+    text-align: center;
+    font-size: 18px;
+    width: 100%
+}
+
+div {
+    background: black;
+    color: white;
+    width: 35%;
+    height: 40%;
+    padding: 30px 30px 10px;
+    position: absolute;
+    right: 0px;
+    top: 12rem;
+    border: 1px solid lightcoral;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        
+    }
+    h3 {
+        font-size: 19px;
+    }
+}
