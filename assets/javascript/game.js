@@ -3,6 +3,8 @@ var playerWins = document.getElementById('player-wins');
 var playerLosses = document.getElementById('player-losses');
 var guessLeft = document.getElementById('guess-left');
 var guessMade = document.getElementById('guess-made')
+var playerGuess = document.getElementById('player-guess')
+
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','q','r','s','t','u','v','w','x','y','z'];
 
@@ -11,6 +13,7 @@ var losses = 0;
 var left = 10;
 var compSelect;
 var made = []; 
+var guess;
 
 function reset() {
     compSelect = alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -31,6 +34,7 @@ function checkAlpha(input) {
 }
 
 
+
 // The computer selects an random indice within the variable alphabet using the Math.random function
 // We multiply the length of the alphabet with Math.random to pick an indice and Math.floor with round down
 // the number that we get back. 
@@ -42,6 +46,9 @@ compSelect = alphabet[Math.floor(Math.random() * alphabet.length)];
 document.onkeyup = function(event) {
 
     if(checkAlpha(event.key)) {
+        guess = event.key;
+        playerGuess.textContent = guess;
+
         if (made.includes(event.key)) {
         console.log('Please pick a different letter')
         }
@@ -67,7 +74,8 @@ document.onkeyup = function(event) {
                 console.log('You lose!');
                 losses++
                 playerLosses.textContent = losses;
-                reset()  
+                alert('The Computer guessed ' + compSelect) 
+                reset()
                 }
             }
         }

@@ -5,12 +5,12 @@ body {
     background-image: url("../images/psychic.jpeg");
     text-align: center;
     font-size: 18px;
-    width: 100%
+    width: 100%;
+    color: tan;
 }
 
 div {
     background: black;
-    color: white;
     width: 35%;
     height: 40%;
     padding: 30px 30px 10px;
@@ -22,4 +22,8 @@ div {
 
 h3 {
     font-size: 25px;
+}
+
+#computer-select {
+    margin-right: 50px;
 }
