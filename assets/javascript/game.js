@@ -39,10 +39,6 @@ compSelect = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 // .onkeyup is assigned a function 'event' so that when a key is pressed, we add that key to the array 'made'.
 // guess.Made is assigned the value of the list made to get the content of made into the html.
-compSelect = alphabet[Math.floor(Math.random() * alphabet.length)];
-
-// .onkeyup is assigned a function 'event' so that when a key is pressed, we add that key to the array 'made'.
-// guess.Made is assigned the value of the list made to get the content of made into the html.
 document.onkeyup = function(event) {
 
     if(checkAlpha(event.key)) {

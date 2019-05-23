@@ -23,12 +23,3 @@ div {
 h3 {
     font-size: 25px;
 }
-
-@media only screen and (max-width: 1200px) {
-    body {
-        
-    }
-    h3 {
-        font-size: 19px;
-    }
-}
